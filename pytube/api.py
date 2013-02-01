@@ -1,5 +1,3 @@
-from __future__ import unicode_literals
-
 from .exceptions import MultipleObjectsReturned, YouTubeError
 from .models import Video
 from .utils import safe_filename
@@ -222,7 +220,7 @@ class YouTube(object):
         response = urlopen(YT_BASE_URL + '?' + querystring)
 
         if response:
-            content = response.read().decode()
+            content = response.read()
             data = parse_qs(content)
             if 'errorcode' in data:
                 error = data.get('reason', 'An unknown error has occurred')

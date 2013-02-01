@@ -1,4 +1,3 @@
-from __future__ import unicode_literals
 from os.path import normpath
 from urllib2 import urlopen
 
